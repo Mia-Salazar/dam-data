@@ -1,13 +1,13 @@
 import Image from "next/image";
 
-import { Card } from "@/components";
+import { Card, Title } from "@/components";
 
 export default function Home() {
   return (
     <section className="">
-      <h2 className="text-center text-3xl">¡Le damos la bienvenida a 
+      <Title>¡Le damos la bienvenida a 
         <span className="text-teal-500 font-bold ml-1">Trenes Chuchu</span>
-      !</h2>
+      !</Title>
       <figure className="mt-8 w-full h-100 object-cover">
         <Image 
           width={0}
