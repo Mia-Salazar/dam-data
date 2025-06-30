@@ -21,7 +21,7 @@ export default function Home() {
       </figure>
       <div className="grid grid-cols-2 gap-4 mt-8 flex mx-auto max-w-2xl">
         <Card 
-          link="/warning"
+          link="/notices"
           linkText="Avisos"
           title="Consulta los últimos avisos de Renfe. Podrás conocer las fechas y los lugares afectados por dichas situaciones." 
         />
