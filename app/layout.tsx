@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Embalses Españoles",
-  description: "Datos sobre el estado de los embalses de España",
+  title: "Trenes españoles",
+  description: "Datos sobre el estado de los trenes de España",
 };
 
 export default function RootLayout({
