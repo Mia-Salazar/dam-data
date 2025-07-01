@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from '@testing-library/user-event'
 
 import NoticeItem from "../../NoticeItem/NoticeItem";
 
@@ -10,6 +11,7 @@ const PROPS = {
             "text": "Andalucía"
         }
     ],
+    onClick: () => {}
 }
 
 describe("NoticeItem", () => {
@@ -24,5 +26,19 @@ describe("NoticeItem", () => {
 
         const tag = screen.getByText(/andalucía/i)
         expect(tag).toBeVisible()
+    });
+
+    it("should fire onClick", async() => {
+        const onClick = jest.fn()
+        const newProps = {...PROPS, onClick}
+
+        render(<NoticeItem {...newProps} />);
+
+        const tag = screen.getByText(/andalucía/i)
+        expect(tag).toBeVisible()
+
+        await userEvent.click(tag)
+
+        expect(onClick).toHaveBeenCalled()
     });
 });
