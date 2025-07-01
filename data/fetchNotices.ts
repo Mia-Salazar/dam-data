@@ -1,6 +1,6 @@
-import { NoticesInterface } from "@/domain/notices.types";
+import { NoticeResponseInterface } from "@/domain/notices.types";
 
-export const fetchNotices = async (): Promise<NoticesInterface[]> => {
+export const fetchNotices = async (): Promise<NoticeResponseInterface[]> => {
   try {
 
     const response = await fetch(

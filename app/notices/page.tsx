@@ -1,10 +1,10 @@
-import { getNoticesList } from "@/application/NoticesService";
-import { Title } from "@/components";
 import Image from "next/image";
+
+import { getNoticesList } from "@/application/NoticesService";
+import { NoticeItem, Title } from "@/components";
 
 const Notices =  async() => {
     const notices = await getNoticesList()
-    console.log(notices, 'aa')
 
     return (
         <section>
@@ -21,6 +21,9 @@ const Notices =  async() => {
                     />
                 </figure>
             <h3 className="mt-6 text-xl">Actualmente hay <span className="bg-teal-500 text-white px-2">{notices.length}</span> avisos</h3>
+            <ul className="mt-6">
+                {notices.map(notice => <NoticeItem key={notice.link} paragraph={notice.paragraph} chipText={notice.chipText} tags={notice.tags} />)}
+            </ul>
         </section>
     );
 }
