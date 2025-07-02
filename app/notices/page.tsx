@@ -1,7 +1,7 @@
 import Image from "next/image";
 
+import { NoticeList, Title } from "@/components";
 import { getNoticesList } from "@/application/NoticesService";
-import { NoticeItem, Title } from "@/components";
 
 const Notices =  async() => {
     const notices = await getNoticesList()
@@ -17,13 +17,10 @@ const Notices =  async() => {
                         style={{ width: '100%', height: 'auto' }}
                         alt=""
                         src="/notice.jpg" 
-                        className="max-w-full max-h-full"
+                        className="max-w-full max-h-full object-cover"
                     />
                 </figure>
-            <h3 className="mt-6 text-xl">Actualmente hay <span className="bg-teal-500 text-white px-2">{notices.length}</span> avisos</h3>
-            <ul className="mt-6">
-                {notices.map(notice => <NoticeItem key={notice.link} paragraph={notice.paragraph} chipText={notice.chipText} tags={notice.tags} />)}
-            </ul>
+            <NoticeList notices={notices} />
         </section>
     );
 }
