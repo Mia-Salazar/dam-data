@@ -5,8 +5,8 @@ interface TagInterface {
 export interface NoticeResponseInterface {
     paragraph: string;
     chipText: string;
-    aspect: "primary",
-    link: string,
+    aspect: string;
+    link: string;
     tags: TagInterface[];
     target: string;
 }

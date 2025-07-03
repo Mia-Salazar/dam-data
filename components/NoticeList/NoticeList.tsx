@@ -46,7 +46,6 @@ const NoticeList = ({ notices }: {notices: NoticeResponseInterface[]}) => {
                 )}
             </ul>
         </>
-
     );
 }
 
