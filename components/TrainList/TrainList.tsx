@@ -12,15 +12,32 @@ const NoticeList = ({ trains }: {trains: TrainInterface[]}) => {
             </h3>
 
             <ul className="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {trains.map(({id, model, purpose, maxSpeed, power, seats, manufacturer}) => 
+                {trains.map((
+                    {
+                        id,
+                        longitude,
+                        manufacturer,
+                        maxSpeed,
+                        model,
+                        motor,
+                        number,
+                        power,
+                        purpose,
+                        seats,
+                        weight,
+                    }) => 
                     <TrainItem
                         key={id}
-                        model={model}
-                        purpose={purpose} 
-                        maxSpeed={maxSpeed}
-                        power={power}
-                        seats={seats}
+                        longitude={longitude}
                         manufacturer={manufacturer}
+                        maxSpeed={maxSpeed}
+                        model={model}
+                        motor={motor}
+                        number={number}
+                        power={power}
+                        purpose={purpose}
+                        seats={seats}
+                        weight={weight}
                     />
                 )}
             </ul>
