@@ -1,5 +1,4 @@
-import { TrainsResponseInterface } from "@/domain/trains.types";
-
+import { TrainsResponseInterface } from "./trainsResponse.types";
 
 export const fetchTrains = async (limit = 15): Promise<TrainsResponseInterface> => {
   try {
