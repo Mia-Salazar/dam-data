@@ -2,8 +2,6 @@ import { TrainInterface } from "@/domain/trains.types";
 import TrainItem from "../TrainItem/TrainItem";
 
 const NoticeList = ({ trains }: {trains: TrainInterface[]}) => {
-    console.log(trains)
-
     return (
         <>
             <h3 className="mt-6 text-xl">Actualmente estamos mostrando 
