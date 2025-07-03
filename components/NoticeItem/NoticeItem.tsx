@@ -10,7 +10,7 @@ const NoticeItems = ({ paragraph, chipText, onClick, tags }:  NoticePropsInterfa
             {tags.map(tag => 
                 <button
                     key={tag.text}
-                    className="mr-2 mt-2 bg-gradient-to-r from-pink-500 to-rose-500 px-2 py-1 text-white rounded-md"
+                    className="mr-2 mt-2 px-2 py-1 badge"
                     onClick={() => onClick(tag.text)}
                 >
                     {tag.text}
