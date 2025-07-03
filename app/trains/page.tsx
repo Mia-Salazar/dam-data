@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-import { getTrainsList } from "@/application/TrainsService";
 import { Title, TrainList } from "@/components";
+import { PageProps } from "./trains.types";
 
-const Trains = async () => {
-    const result = await getTrainsList()
+const Trains = ({ searchParams }: PageProps) => {
+    const limit = Number(searchParams.limit) || 15;
 
     return (
         <section>
@@ -20,7 +20,7 @@ const Trains = async () => {
                         className="max-w-full max-h-full object-cover"
                     />
                 </figure>
-            <TrainList trains={result} />
+            <TrainList limit={limit} />
         </section>
     );
 }
