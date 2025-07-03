@@ -1,46 +1,23 @@
-
-
-interface FieldsInterface {
-    type: string;
-    id: string;
-}
+import { TrainsResponseInterface } from "@/data/trainsResponse.types";
 
 interface TrainInterface {
-    _id: number;
-    MODELO: string;
-    PROPOSITO: string;
-    "ANCHO VIA": string;
-    "VELOCIDAD MAXIMA": string;
-    MOTORES: string;
-    "POTENCIA TOTAL": string;
-    TENSION: string;
-    "MASA SIN CARGA": string;
-    "LONGITUD TOTAL": string;
-    "PLAZAS SENTADAS": string;
-    SEÑALIZACION: string;
-    CONSTRUCTOR: string;
-    "UNIDADES CONSTRUIDAS": number;
-    FOTOS: string;
-    VIDEO: string;
-    PRESTACIONES: string;
-    "FICHA TECNICA": string;
-
+  id: number;
+  model: string;
+  purpose: string;
+  maxSpeed: string;
+  power: string;
+  seats: string;
+  manufacturer: string;
 }
 
-export interface TrainsResponseInterface {
-    help: string;
-    result: {
-        fields: FieldsInterface[]
-        include_total: boolean;
-        limit: number;
-        records: TrainInterface[];
-        records_format: string;
-        resource_id: string;
-        total: number;
-        _links: {
-            next: string;
-            start: string;
-        }
-    };
-    success: boolean;
+export function mapApiToTrains(response: TrainsResponseInterface): TrainInterface[] {
+  return response.result.records.map((record) => ({
+    id: record._id,
+    model: record.MODELO,
+    purpose: record.PROPOSITO,
+    maxSpeed: record["VELOCIDAD MAXIMA"],
+    power: record["POTENCIA TOTAL"],
+    seats: record["PLAZAS SENTADAS"],
+    manufacturer: record.CONSTRUCTOR,
+  }));
 }
