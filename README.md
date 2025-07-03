@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Train data
 
-## Getting Started
-
-First, run the development server:
-
-```bash
+## Comands
+To run the application:
+```console
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To run tests:
+```console
+npm run test
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API
+The API used is Renfe API. You can read [the documentation here](https://data.renfe.com/api/1/util/snippet/api_info.html?resource_id=a2368cff-1562-4dde-8466-9635ea3a572a)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies
+- NextJs: Library used for the whole application
+- Typescript: For logic
+- Tailwind: For styling
+- Jest & testing library: for testing
 
-## Learn More
+## Decissions
+- Architecture & Scalability: I've implemented a layered architecture to ensure clear separation of concerns, significantly boosting scalability and readability.
+- Accessibility: I've prioritized accessibility using semantic HTML and appropriate ARIA labels for broader usability.
+- Version Control: The project is managed on the main branch for simplicity, with commits highlighting key features and milestones.
+- Code Consistency: All interface properties and component props are organized alphabetically to maintain high code quality and consistency.
 
-To learn more about Next.js, take a look at the following resources:
+## Architecture
+<pre>
+src/
+├── app/                     # Pages
+│   └── notices              # Notice page
+├── application/             # Use cases
+├── components/              # Reusable components
+├── data/                    # Functions that call endpoints
+├── domain/                  # Domain types and rules
+├── public/                  # Assets, for example, images
+</pre>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## TODO
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Add more tests
+- Improve format and standarize it
+- Use branches for each feature
