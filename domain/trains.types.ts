@@ -29,12 +29,18 @@ interface TrainInterface {
 
 export interface TrainsResponseInterface {
     help: string;
-    success: boolean;
     result: {
-        include_total: boolean;
-        resource_id: string;
         fields: FieldsInterface[]
-    },
-    records_format: string;
-    records: TrainInterface[];
+        include_total: boolean;
+        limit: number;
+        records: TrainInterface[];
+        records_format: string;
+        resource_id: string;
+        total: number;
+        _links: {
+            next: string;
+            start: string;
+        }
+    };
+    success: boolean;
 }
