@@ -1,5 +1,7 @@
 # Train data
 
+This project displays notices related to Renfe's trains. We can also see the trains Renfe uses and all their characteristics.
+
 ## Comands
 To run the application:
 ```console
