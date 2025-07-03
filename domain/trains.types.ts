@@ -1,6 +1,6 @@
 import { TrainsResponseInterface } from "@/data/trainsResponse.types";
 
-interface TrainInterface {
+export interface TrainInterface {
   id: number;
   model: string;
   purpose: string;

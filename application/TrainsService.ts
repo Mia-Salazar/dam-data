@@ -1,7 +1,9 @@
 import { fetchTrains } from "@/data/fetchTrains";
-import { TrainsResponseInterface } from "@/domain/trains.types";
 
-export const getTrainsList = async (): Promise<TrainsResponseInterface> => {
+import { mapApiToTrains, TrainInterface } from "@/domain/trains.types";
+
+export const getTrainsList = async (): Promise<TrainInterface[]> => {
     const response = await fetchTrains();
-    return response;
+    const result = mapApiToTrains(response);
+    return result;
 };
